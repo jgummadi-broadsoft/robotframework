@@ -1,0 +1,2693 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.2 (Python 3.9.1 on win32)" generated="20210123 21:44:25.754" rpa="false">
+<suite id="s1" name="Testsuite" source="C:\Users\jalan\PycharmProjects\remoterobotframework\demo_app\testsuite">
+<suite id="s1-s1" name="Auth Tests" source="C:\Users\jalan\PycharmProjects\remoterobotframework\demo_app\testsuite\auth_tests.robot">
+<test id="s1-s1-t1" name="authorization api check test">
+<kw name="Register Username" library="common">
+<assign>
+<var>${valid user}</var>
+<var>${valid password}</var>
+</assign>
+<kw name="Generate Random String" library="String">
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<assign>
+<var>${username}</var>
+</assign>
+<msg timestamp="20210123 21:44:26.233" level="INFO">${username} = JqlSj7VF</msg>
+<status status="PASS" starttime="20210123 21:44:26.232" endtime="20210123 21:44:26.233"></status>
+</kw>
+<kw name="Generate Random String" library="String">
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<arguments>
+<arg>${RANDOM STRING LENGTH}</arg>
+<arg>[NUMBERS]</arg>
+</arguments>
+<assign>
+<var>${phone}</var>
+</assign>
+<msg timestamp="20210123 21:44:26.234" level="INFO">${phone} = 2275074332</msg>
+<status status="PASS" starttime="20210123 21:44:26.234" endtime="20210123 21:44:26.234"></status>
+</kw>
+<kw name="Fill Register Details" library="common">
+<arguments>
+<arg>${username}</arg>
+<arg>${username}</arg>
+</arguments>
+<kw name="Open Browser To Register Login" library="common">
+<arguments>
+<arg>${REGISTER URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+</arguments>
+<msg timestamp="20210123 21:44:26.236" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8080/register'.</msg>
+<status status="PASS" starttime="20210123 21:44:26.236" endtime="20210123 21:44:29.884"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210123 21:44:29.884" endtime="20210123 21:44:32.030"></status>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${DELAY}</arg>
+</arguments>
+<status status="PASS" starttime="20210123 21:44:32.030" endtime="20210123 21:44:32.032"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:44:26.234" endtime="20210123 21:44:32.032"></status>
+</kw>
+<kw name="Register Should Be Open" library="common">
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current page title equals ``title``.</doc>
+<arguments>
+<arg>Register - Demo App</arg>
+</arguments>
+<msg timestamp="20210123 21:44:32.052" level="INFO">Page title is 'Register - Demo App'.</msg>
+<status status="PASS" starttime="20210123 21:44:32.034" endtime="20210123 21:44:32.053"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:44:32.033" endtime="20210123 21:44:32.054"></status>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<doc>Returns a list containing given items.</doc>
+<arguments>
+<arg>username</arg>
+<arg>password</arg>
+<arg>firstname</arg>
+<arg>lastname</arg>
+<arg>phone</arg>
+</arguments>
+<assign>
+<var>@{fieldlist}</var>
+</assign>
+<msg timestamp="20210123 21:44:32.056" level="INFO">@{fieldlist} = [ username | password | firstname | lastname | phone ]</msg>
+<status status="PASS" starttime="20210123 21:44:32.054" endtime="20210123 21:44:32.056"></status>
+</kw>
+<kw name="${field} IN [ @{fieldlist} ]" type="for">
+<msg timestamp="20210123 21:44:32.058" level="WARN">Error in file 'C:\Users\jalan\PycharmProjects\remoterobotframework\demo_app\testsuite\common.robot' in FOR loop starting on line 70: For loop header ':FOR' is deprecated. Use 'FOR' instead.</msg>
+<msg timestamp="20210123 21:44:32.063" level="WARN">Error in file 'C:\Users\jalan\PycharmProjects\remoterobotframework\demo_app\testsuite\common.robot' in FOR loop starting on line 70: Marking for loop body with '\' is deprecated. Remove markers and use 'END' instead.</msg>
+<kw name="${field} = username" type="foritem">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${field}</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20210123 21:44:32.112" level="INFO">Typing text 'JqlSj7VF' into text field 'username'.</msg>
+<status status="PASS" starttime="20210123 21:44:32.100" endtime="20210123 21:44:32.260"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${field}</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20210123 21:44:32.262" level="INFO">Typing text 'JqlSj7VF' into text field 'username'.</msg>
+<status status="PASS" starttime="20210123 21:44:32.261" endtime="20210123 21:44:32.347"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:44:32.099" endtime="20210123 21:44:32.347"></status>
+</kw>
+<kw name="${field} = password" type="foritem">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${field}</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20210123 21:44:32.349" level="INFO">Typing text 'JqlSj7VF' into text field 'password'.</msg>
+<status status="PASS" starttime="20210123 21:44:32.348" endtime="20210123 21:44:32.456"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${field}</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20210123 21:44:32.458" level="INFO">Typing text 'JqlSj7VF' into text field 'password'.</msg>
+<status status="PASS" starttime="20210123 21:44:32.456" endtime="20210123 21:44:32.530"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:44:32.348" endtime="20210123 21:44:32.530"></status>
+</kw>
+<kw name="${field} = firstname" type="foritem">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${field}</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20210123 21:44:32.531" level="INFO">Typing text 'JqlSj7VF' into text field 'firstname'.</msg>
+<status status="PASS" starttime="20210123 21:44:32.530" endtime="20210123 21:44:32.630"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${field}</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20210123 21:44:32.631" level="INFO">Typing text 'JqlSj7VF' into text field 'firstname'.</msg>
+<status status="PASS" starttime="20210123 21:44:32.631" endtime="20210123 21:44:32.703"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:44:32.530" endtime="20210123 21:44:32.703"></status>
+</kw>
+<kw name="${field} = lastname" type="foritem">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${field}</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20210123 21:44:32.705" level="INFO">Typing text 'JqlSj7VF' into text field 'lastname'.</msg>
+<status status="PASS" starttime="20210123 21:44:32.704" endtime="20210123 21:44:32.797"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${field}</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20210123 21:44:32.799" level="INFO">Typing text 'JqlSj7VF' into text field 'lastname'.</msg>
+<status status="PASS" starttime="20210123 21:44:32.798" endtime="20210123 21:44:32.871"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:44:32.704" endtime="20210123 21:44:32.872"></status>
+</kw>
+<kw name="${field} = phone" type="foritem">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${field}</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20210123 21:44:32.873" level="INFO">Typing text 'JqlSj7VF' into text field 'phone'.</msg>
+<status status="PASS" starttime="20210123 21:44:32.872" endtime="20210123 21:44:32.966"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${field}</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20210123 21:44:32.967" level="INFO">Typing text 'JqlSj7VF' into text field 'phone'.</msg>
+<status status="PASS" starttime="20210123 21:44:32.966" endtime="20210123 21:44:33.037"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:44:32.872" endtime="20210123 21:44:33.038"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:44:32.058" endtime="20210123 21:44:33.038"></status>
+</kw>
+<kw name="Submit Credentials" library="common">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>css:input[type='submit']</arg>
+</arguments>
+<msg timestamp="20210123 21:44:33.039" level="INFO">Clicking button 'css:input[type='submit']'.</msg>
+<status status="PASS" starttime="20210123 21:44:33.038" endtime="20210123 21:44:33.509"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:44:33.038" endtime="20210123 21:44:33.510"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:44:26.234" endtime="20210123 21:44:33.510"></status>
+</kw>
+<msg timestamp="20210123 21:44:33.510" level="INFO">${valid user} = JqlSj7VF</msg>
+<msg timestamp="20210123 21:44:33.510" level="INFO">${valid password} = JqlSj7VF</msg>
+<status status="PASS" starttime="20210123 21:44:26.231" endtime="20210123 21:44:33.510"></status>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<doc>Returns a list containing given items.</doc>
+<arguments>
+<arg>${valid user}</arg>
+<arg>${valid password}</arg>
+</arguments>
+<assign>
+<var>${auth}</var>
+</assign>
+<msg timestamp="20210123 21:44:33.513" level="INFO">${auth} = ['JqlSj7VF', 'JqlSj7VF']</msg>
+<status status="PASS" starttime="20210123 21:44:33.511" endtime="20210123 21:44:33.513"></status>
+</kw>
+<kw name="Create Session" library="RequestsLibrary">
+<doc>Create Session: create a HTTP session to a server</doc>
+<arguments>
+<arg>myssion</arg>
+<arg>${url}</arg>
+<arg>auth=${auth}</arg>
+</arguments>
+<msg timestamp="20210123 21:44:33.514" level="INFO">Creating Session using : alias=myssion, url=http://localhost:8080, headers={},                     cookies={}, auth=&lt;requests.auth.HTTPBasicAuth object at 0x00000174D4A2FD30&gt;, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20210123 21:44:33.513" endtime="20210123 21:44:33.515"></status>
+</kw>
+<kw name="Set Header And Check Response">
+<arguments>
+<arg>${EMPTY}</arg>
+</arguments>
+<assign>
+<var>${resp}</var>
+</assign>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>Accept=application/json, text/plain, */*</arg>
+<arg>Content-Type=application/json</arg>
+<arg>token=${token}</arg>
+</arguments>
+<assign>
+<var>&amp;{headers}</var>
+</assign>
+<msg timestamp="20210123 21:44:33.517" level="INFO">&amp;{headers} = { Accept=application/json, text/plain, */* | Content-Type=application/json | token= }</msg>
+<status status="PASS" starttime="20210123 21:44:33.516" endtime="20210123 21:44:33.517"></status>
+</kw>
+<kw name="Get Request" library="RequestsLibrary">
+<doc>*DEPRECATED* Please use `GET On Session` instead.</doc>
+<arguments>
+<arg>myssion</arg>
+<arg>/api/auth/token</arg>
+<arg>headers=${headers}</arg>
+</arguments>
+<assign>
+<var>${resp}</var>
+</assign>
+<msg timestamp="20210123 21:44:33.517" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
+<msg timestamp="20210123 21:44:35.580" level="INFO">GET Request : url=http://localhost:8080/api/auth/token 
+ path_url=/api/auth/token 
+ headers={'User-Agent': 'python-requests/2.25.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': 'application/json, text/plain, */*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'token': '', 'Authorization': 'Basic SnFsU2o3VkY6SnFsU2o3VkY='} 
+ body=None 
+ </msg>
+<msg timestamp="20210123 21:44:35.580" level="INFO">GET Response : url=http://localhost:8080/api/auth/token 
+ status=200, reason=OK 
+ headers={'Content-Type': 'application/json', 'Content-Length': '84', 'Server': 'Werkzeug/0.14.1 Python/3.8.6', 'Date': 'Sat, 23 Jan 2021 19:44:35 GMT'} 
+ body={"status":"SUCCESS","token":"MzI3ODI3NzMwNjQ5MzExNzI5OTk1Mjk1NjYzMzcwMTEyMTc4ODk1"}
+ 
+ </msg>
+<msg timestamp="20210123 21:44:35.581" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20210123 21:44:33.517" endtime="20210123 21:44:35.581"></status>
+</kw>
+<msg timestamp="20210123 21:44:35.581" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20210123 21:44:33.515" endtime="20210123 21:44:35.581"></status>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${resp.status_code}</arg>
+<arg>200</arg>
+</arguments>
+<msg timestamp="20210123 21:44:35.582" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" starttime="20210123 21:44:35.582" endtime="20210123 21:44:35.583"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>json.loads($resp.content)</arg>
+<arg>json</arg>
+</arguments>
+<assign>
+<var>&amp;{data}</var>
+</assign>
+<msg timestamp="20210123 21:44:35.587" level="INFO">&amp;{data} = { status=SUCCESS | token=MzI3ODI3NzMwNjQ5MzExNzI5OTk1Mjk1NjYzMzcwMTEyMTc4ODk1 }</msg>
+<status status="PASS" starttime="20210123 21:44:35.583" endtime="20210123 21:44:35.587"></status>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>&amp;{data}[status]</arg>
+<arg>SUCCESS</arg>
+</arguments>
+<msg timestamp="20210123 21:44:35.588" level="WARN">Accessing variable items using '&amp;{data}[status]' syntax is deprecated. Use '${data}[status]' instead.</msg>
+<status status="PASS" starttime="20210123 21:44:35.587" endtime="20210123 21:44:35.589"></status>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary" type="teardown">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20210123 21:44:35.592" endtime="20210123 21:44:38.071"></status>
+</kw>
+<timeout value="10 minutes"></timeout>
+<status status="PASS" starttime="20210123 21:44:26.222" endtime="20210123 21:44:38.072" critical="yes"></status>
+</test>
+<test id="s1-s1-t2" name="autorization update api check test">
+<kw name="Register Username" library="common">
+<assign>
+<var>${valid user}</var>
+<var>${valid password}</var>
+</assign>
+<kw name="Generate Random String" library="String">
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<assign>
+<var>${username}</var>
+</assign>
+<msg timestamp="20210123 21:44:38.090" level="INFO">${username} = 1PHwpW7a</msg>
+<status status="PASS" starttime="20210123 21:44:38.082" endtime="20210123 21:44:38.090"></status>
+</kw>
+<kw name="Generate Random String" library="String">
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<arguments>
+<arg>${RANDOM STRING LENGTH}</arg>
+<arg>[NUMBERS]</arg>
+</arguments>
+<assign>
+<var>${phone}</var>
+</assign>
+<msg timestamp="20210123 21:44:38.093" level="INFO">${phone} = 4699704550</msg>
+<status status="PASS" starttime="20210123 21:44:38.091" endtime="20210123 21:44:38.093"></status>
+</kw>
+<kw name="Fill Register Details" library="common">
+<arguments>
+<arg>${username}</arg>
+<arg>${username}</arg>
+</arguments>
+<kw name="Open Browser To Register Login" library="common">
+<arguments>
+<arg>${REGISTER URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+</arguments>
+<msg timestamp="20210123 21:44:38.097" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8080/register'.</msg>
+<status status="PASS" starttime="20210123 21:44:38.096" endtime="20210123 21:44:41.671"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210123 21:44:41.671" endtime="20210123 21:44:43.841"></status>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${DELAY}</arg>
+</arguments>
+<status status="PASS" starttime="20210123 21:44:43.842" endtime="20210123 21:44:43.845"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:44:38.095" endtime="20210123 21:44:43.846"></status>
+</kw>
+<kw name="Register Should Be Open" library="common">
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current page title equals ``title``.</doc>
+<arguments>
+<arg>Register - Demo App</arg>
+</arguments>
+<msg timestamp="20210123 21:44:43.863" level="INFO">Page title is 'Register - Demo App'.</msg>
+<status status="PASS" starttime="20210123 21:44:43.847" endtime="20210123 21:44:43.864"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:44:43.846" endtime="20210123 21:44:43.864"></status>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<doc>Returns a list containing given items.</doc>
+<arguments>
+<arg>username</arg>
+<arg>password</arg>
+<arg>firstname</arg>
+<arg>lastname</arg>
+<arg>phone</arg>
+</arguments>
+<assign>
+<var>@{fieldlist}</var>
+</assign>
+<msg timestamp="20210123 21:44:43.867" level="INFO">@{fieldlist} = [ username | password | firstname | lastname | phone ]</msg>
+<status status="PASS" starttime="20210123 21:44:43.865" endtime="20210123 21:44:43.867"></status>
+</kw>
+<kw name="${field} IN [ @{fieldlist} ]" type="for">
+<msg timestamp="20210123 21:44:43.867" level="WARN">Error in file 'C:\Users\jalan\PycharmProjects\remoterobotframework\demo_app\testsuite\common.robot' in FOR loop starting on line 70: For loop header ':FOR' is deprecated. Use 'FOR' instead.</msg>
+<msg timestamp="20210123 21:44:43.872" level="WARN">Error in file 'C:\Users\jalan\PycharmProjects\remoterobotframework\demo_app\testsuite\common.robot' in FOR loop starting on line 70: Marking for loop body with '\' is deprecated. Remove markers and use 'END' instead.</msg>
+<kw name="${field} = username" type="foritem">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${field}</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20210123 21:44:43.888" level="INFO">Typing text '1PHwpW7a' into text field 'username'.</msg>
+<status status="PASS" starttime="20210123 21:44:43.878" endtime="20210123 21:44:44.042"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${field}</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20210123 21:44:44.043" level="INFO">Typing text '1PHwpW7a' into text field 'username'.</msg>
+<status status="PASS" starttime="20210123 21:44:44.043" endtime="20210123 21:44:44.215"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:44:43.878" endtime="20210123 21:44:44.215"></status>
+</kw>
+<kw name="${field} = password" type="foritem">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${field}</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20210123 21:44:44.227" level="INFO">Typing text '1PHwpW7a' into text field 'password'.</msg>
+<status status="PASS" starttime="20210123 21:44:44.216" endtime="20210123 21:44:44.331"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${field}</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20210123 21:44:44.332" level="INFO">Typing text '1PHwpW7a' into text field 'password'.</msg>
+<status status="PASS" starttime="20210123 21:44:44.331" endtime="20210123 21:44:44.395"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:44:44.216" endtime="20210123 21:44:44.395"></status>
+</kw>
+<kw name="${field} = firstname" type="foritem">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${field}</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20210123 21:44:44.396" level="INFO">Typing text '1PHwpW7a' into text field 'firstname'.</msg>
+<status status="PASS" starttime="20210123 21:44:44.395" endtime="20210123 21:44:44.482"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${field}</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20210123 21:44:44.483" level="INFO">Typing text '1PHwpW7a' into text field 'firstname'.</msg>
+<status status="PASS" starttime="20210123 21:44:44.482" endtime="20210123 21:44:44.548"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:44:44.395" endtime="20210123 21:44:44.548"></status>
+</kw>
+<kw name="${field} = lastname" type="foritem">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${field}</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20210123 21:44:44.549" level="INFO">Typing text '1PHwpW7a' into text field 'lastname'.</msg>
+<status status="PASS" starttime="20210123 21:44:44.548" endtime="20210123 21:44:44.630"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${field}</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20210123 21:44:44.632" level="INFO">Typing text '1PHwpW7a' into text field 'lastname'.</msg>
+<status status="PASS" starttime="20210123 21:44:44.630" endtime="20210123 21:44:44.696"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:44:44.548" endtime="20210123 21:44:44.696"></status>
+</kw>
+<kw name="${field} = phone" type="foritem">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${field}</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20210123 21:44:44.698" level="INFO">Typing text '1PHwpW7a' into text field 'phone'.</msg>
+<status status="PASS" starttime="20210123 21:44:44.697" endtime="20210123 21:44:44.780"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${field}</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20210123 21:44:44.782" level="INFO">Typing text '1PHwpW7a' into text field 'phone'.</msg>
+<status status="PASS" starttime="20210123 21:44:44.781" endtime="20210123 21:44:44.846"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:44:44.697" endtime="20210123 21:44:44.846"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:44:43.867" endtime="20210123 21:44:44.846"></status>
+</kw>
+<kw name="Submit Credentials" library="common">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>css:input[type='submit']</arg>
+</arguments>
+<msg timestamp="20210123 21:44:44.847" level="INFO">Clicking button 'css:input[type='submit']'.</msg>
+<status status="PASS" starttime="20210123 21:44:44.847" endtime="20210123 21:44:45.330"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:44:44.846" endtime="20210123 21:44:45.330"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:44:38.093" endtime="20210123 21:44:45.330"></status>
+</kw>
+<msg timestamp="20210123 21:44:45.331" level="INFO">${valid user} = 1PHwpW7a</msg>
+<msg timestamp="20210123 21:44:45.331" level="INFO">${valid password} = 1PHwpW7a</msg>
+<status status="PASS" starttime="20210123 21:44:38.081" endtime="20210123 21:44:45.331"></status>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<doc>Returns a list containing given items.</doc>
+<arguments>
+<arg>${valid user}</arg>
+<arg>${valid password}</arg>
+</arguments>
+<assign>
+<var>${auth}</var>
+</assign>
+<msg timestamp="20210123 21:44:45.332" level="INFO">${auth} = ['1PHwpW7a', '1PHwpW7a']</msg>
+<status status="PASS" starttime="20210123 21:44:45.331" endtime="20210123 21:44:45.332"></status>
+</kw>
+<kw name="Create Session" library="RequestsLibrary">
+<doc>Create Session: create a HTTP session to a server</doc>
+<arguments>
+<arg>myssion</arg>
+<arg>${url}</arg>
+<arg>auth=${auth}</arg>
+</arguments>
+<msg timestamp="20210123 21:44:45.334" level="INFO">Creating Session using : alias=myssion, url=http://localhost:8080, headers={},                     cookies={}, auth=&lt;requests.auth.HTTPBasicAuth object at 0x00000174D49EE0A0&gt;, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20210123 21:44:45.333" endtime="20210123 21:44:45.334"></status>
+</kw>
+<kw name="Set Header And Check Response">
+<arguments>
+<arg>${EMPTY}</arg>
+</arguments>
+<assign>
+<var>${resp}</var>
+</assign>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>Accept=application/json, text/plain, */*</arg>
+<arg>Content-Type=application/json</arg>
+<arg>token=${token}</arg>
+</arguments>
+<assign>
+<var>&amp;{headers}</var>
+</assign>
+<msg timestamp="20210123 21:44:45.336" level="INFO">&amp;{headers} = { Accept=application/json, text/plain, */* | Content-Type=application/json | token= }</msg>
+<status status="PASS" starttime="20210123 21:44:45.335" endtime="20210123 21:44:45.336"></status>
+</kw>
+<kw name="Get Request" library="RequestsLibrary">
+<doc>*DEPRECATED* Please use `GET On Session` instead.</doc>
+<arguments>
+<arg>myssion</arg>
+<arg>/api/auth/token</arg>
+<arg>headers=${headers}</arg>
+</arguments>
+<assign>
+<var>${resp}</var>
+</assign>
+<msg timestamp="20210123 21:44:45.336" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
+<msg timestamp="20210123 21:44:47.405" level="INFO">GET Request : url=http://localhost:8080/api/auth/token 
+ path_url=/api/auth/token 
+ headers={'User-Agent': 'python-requests/2.25.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': 'application/json, text/plain, */*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'token': '', 'Authorization': 'Basic MVBId3BXN2E6MVBId3BXN2E='} 
+ body=None 
+ </msg>
+<msg timestamp="20210123 21:44:47.406" level="INFO">GET Response : url=http://localhost:8080/api/auth/token 
+ status=200, reason=OK 
+ headers={'Content-Type': 'application/json', 'Content-Length': '84', 'Server': 'Werkzeug/0.14.1 Python/3.8.6', 'Date': 'Sat, 23 Jan 2021 19:44:47 GMT'} 
+ body={"status":"SUCCESS","token":"MjA5MjA5MjY2MjAyNTc2MzgzMzE1MzkxMjg0NzAzOTg4MTExMDk="}
+ 
+ </msg>
+<msg timestamp="20210123 21:44:47.406" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20210123 21:44:45.336" endtime="20210123 21:44:47.406"></status>
+</kw>
+<msg timestamp="20210123 21:44:47.406" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20210123 21:44:45.334" endtime="20210123 21:44:47.406"></status>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${resp.status_code}</arg>
+<arg>200</arg>
+</arguments>
+<msg timestamp="20210123 21:44:47.408" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" starttime="20210123 21:44:47.407" endtime="20210123 21:44:47.408"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>json.loads($resp.content)</arg>
+<arg>json</arg>
+</arguments>
+<assign>
+<var>&amp;{data}</var>
+</assign>
+<msg timestamp="20210123 21:44:47.409" level="INFO">&amp;{data} = { status=SUCCESS | token=MjA5MjA5MjY2MjAyNTc2MzgzMzE1MzkxMjg0NzAzOTg4MTExMDk= }</msg>
+<status status="PASS" starttime="20210123 21:44:47.409" endtime="20210123 21:44:47.409"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${resp.json()['token']}</arg>
+</arguments>
+<assign>
+<var>${token}</var>
+</assign>
+<msg timestamp="20210123 21:44:47.410" level="INFO">${token} = MjA5MjA5MjY2MjAyNTc2MzgzMzE1MzkxMjg0NzAzOTg4MTExMDk=</msg>
+<status status="PASS" starttime="20210123 21:44:47.410" endtime="20210123 21:44:47.411"></status>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>&amp;{data}[status]</arg>
+<arg>SUCCESS</arg>
+</arguments>
+<msg timestamp="20210123 21:44:47.411" level="WARN">Accessing variable items using '&amp;{data}[status]' syntax is deprecated. Use '${data}[status]' instead.</msg>
+<status status="PASS" starttime="20210123 21:44:47.411" endtime="20210123 21:44:47.413"></status>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>Accept=application/json, text/plain, */*</arg>
+<arg>Content-Type=application/json</arg>
+<arg>token=${token}</arg>
+</arguments>
+<assign>
+<var>&amp;{headersToken}</var>
+</assign>
+<msg timestamp="20210123 21:44:47.414" level="INFO">&amp;{headersToken} = { Accept=application/json, text/plain, */* | Content-Type=application/json | token=MjA5MjA5MjY2MjAyNTc2MzgzMzE1MzkxMjg0NzAzOTg4MTExMDk= }</msg>
+<status status="PASS" starttime="20210123 21:44:47.413" endtime="20210123 21:44:47.414"></status>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>firstname=zzzz</arg>
+<arg>lastname=rrrr</arg>
+<arg>phone=987654</arg>
+</arguments>
+<assign>
+<var>&amp;{requestData}</var>
+</assign>
+<msg timestamp="20210123 21:44:47.414" level="INFO">&amp;{requestData} = { firstname=zzzz | lastname=rrrr | phone=987654 }</msg>
+<status status="PASS" starttime="20210123 21:44:47.414" endtime="20210123 21:44:47.415"></status>
+</kw>
+<kw name="Put Request" library="RequestsLibrary">
+<doc>*DEPRECATED* Please use `PUT On Session` instead.</doc>
+<arguments>
+<arg>myssion</arg>
+<arg>/api/users/${username}</arg>
+<arg>${requestData}</arg>
+<arg>headers=${headersToken}</arg>
+</arguments>
+<assign>
+<var>${updateresp}</var>
+</assign>
+<msg timestamp="20210123 21:44:47.415" level="WARN">Keyword 'RequestsLibrary.Put Request' is deprecated. Please use `PUT On Session` instead.</msg>
+<msg timestamp="20210123 21:44:49.443" level="INFO">PUT Request : url=http://localhost:8080/api/users/Test999 
+ path_url=/api/users/Test999 
+ headers={'User-Agent': 'python-requests/2.25.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': 'application/json, text/plain, */*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'token': 'MjA5MjA5MjY2MjAyNTc2MzgzMzE1MzkxMjg0NzAzOTg4MTExMDk=', 'Content-Length': '60', 'Authorization': 'Basic MVBId3BXN2E6MVBId3BXN2E='} 
+ body={"firstname": "zzzz", "lastname": "rrrr", "phone": "987654"} 
+ </msg>
+<msg timestamp="20210123 21:44:49.444" level="INFO">PUT Response : url=http://localhost:8080/api/users/Test999 
+ status=500, reason=INTERNAL SERVER ERROR 
+ headers={'Content-Type': 'text/html', 'Content-Length': '291', 'Server': 'Werkzeug/0.14.1 Python/3.8.6', 'Date': 'Sat, 23 Jan 2021 19:44:49 GMT'} 
+ body=&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN"&gt;
+&lt;title&gt;500 Internal Server Error&lt;/title&gt;
+&lt;h1&gt;Internal Server Error&lt;/h1&gt;
+&lt;p&gt;The server encountered an internal error and was unable to complete your request.  Either the server is overloaded or there is an error in the application.&lt;/p&gt;
+ 
+ </msg>
+<msg timestamp="20210123 21:44:49.444" level="INFO">${updateresp} = &lt;Response [500]&gt;</msg>
+<status status="PASS" starttime="20210123 21:44:47.415" endtime="20210123 21:44:49.444"></status>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary" type="teardown">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20210123 21:44:49.446" endtime="20210123 21:44:51.674"></status>
+</kw>
+<timeout value="10 minutes"></timeout>
+<status status="PASS" starttime="20210123 21:44:38.078" endtime="20210123 21:44:51.675" critical="yes"></status>
+</test>
+<test id="s1-s1-t3" name="get users api check test">
+<kw name="Register Username" library="common">
+<assign>
+<var>${valid user}</var>
+<var>${valid password}</var>
+</assign>
+<kw name="Generate Random String" library="String">
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<assign>
+<var>${username}</var>
+</assign>
+<msg timestamp="20210123 21:44:51.682" level="INFO">${username} = nfVxgmfd</msg>
+<status status="PASS" starttime="20210123 21:44:51.681" endtime="20210123 21:44:51.682"></status>
+</kw>
+<kw name="Generate Random String" library="String">
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<arguments>
+<arg>${RANDOM STRING LENGTH}</arg>
+<arg>[NUMBERS]</arg>
+</arguments>
+<assign>
+<var>${phone}</var>
+</assign>
+<msg timestamp="20210123 21:44:51.684" level="INFO">${phone} = 5483774181</msg>
+<status status="PASS" starttime="20210123 21:44:51.682" endtime="20210123 21:44:51.684"></status>
+</kw>
+<kw name="Fill Register Details" library="common">
+<arguments>
+<arg>${username}</arg>
+<arg>${username}</arg>
+</arguments>
+<kw name="Open Browser To Register Login" library="common">
+<arguments>
+<arg>${REGISTER URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+</arguments>
+<msg timestamp="20210123 21:44:51.689" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8080/register'.</msg>
+<status status="PASS" starttime="20210123 21:44:51.686" endtime="20210123 21:44:55.304"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210123 21:44:55.305" endtime="20210123 21:44:57.601"></status>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${DELAY}</arg>
+</arguments>
+<status status="PASS" starttime="20210123 21:44:57.602" endtime="20210123 21:44:57.603"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:44:51.685" endtime="20210123 21:44:57.603"></status>
+</kw>
+<kw name="Register Should Be Open" library="common">
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current page title equals ``title``.</doc>
+<arguments>
+<arg>Register - Demo App</arg>
+</arguments>
+<msg timestamp="20210123 21:44:57.615" level="INFO">Page title is 'Register - Demo App'.</msg>
+<status status="PASS" starttime="20210123 21:44:57.605" endtime="20210123 21:44:57.615"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:44:57.604" endtime="20210123 21:44:57.615"></status>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<doc>Returns a list containing given items.</doc>
+<arguments>
+<arg>username</arg>
+<arg>password</arg>
+<arg>firstname</arg>
+<arg>lastname</arg>
+<arg>phone</arg>
+</arguments>
+<assign>
+<var>@{fieldlist}</var>
+</assign>
+<msg timestamp="20210123 21:44:57.618" level="INFO">@{fieldlist} = [ username | password | firstname | lastname | phone ]</msg>
+<status status="PASS" starttime="20210123 21:44:57.617" endtime="20210123 21:44:57.618"></status>
+</kw>
+<kw name="${field} IN [ @{fieldlist} ]" type="for">
+<msg timestamp="20210123 21:44:57.618" level="WARN">Error in file 'C:\Users\jalan\PycharmProjects\remoterobotframework\demo_app\testsuite\common.robot' in FOR loop starting on line 70: For loop header ':FOR' is deprecated. Use 'FOR' instead.</msg>
+<msg timestamp="20210123 21:44:57.625" level="WARN">Error in file 'C:\Users\jalan\PycharmProjects\remoterobotframework\demo_app\testsuite\common.robot' in FOR loop starting on line 70: Marking for loop body with '\' is deprecated. Remove markers and use 'END' instead.</msg>
+<kw name="${field} = username" type="foritem">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${field}</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20210123 21:44:57.634" level="INFO">Typing text 'nfVxgmfd' into text field 'username'.</msg>
+<status status="PASS" starttime="20210123 21:44:57.628" endtime="20210123 21:44:57.747"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${field}</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20210123 21:44:57.749" level="INFO">Typing text 'nfVxgmfd' into text field 'username'.</msg>
+<status status="PASS" starttime="20210123 21:44:57.748" endtime="20210123 21:44:57.840"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:44:57.627" endtime="20210123 21:44:57.840"></status>
+</kw>
+<kw name="${field} = password" type="foritem">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${field}</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20210123 21:44:57.841" level="INFO">Typing text 'nfVxgmfd' into text field 'password'.</msg>
+<status status="PASS" starttime="20210123 21:44:57.841" endtime="20210123 21:44:57.942"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${field}</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20210123 21:44:57.944" level="INFO">Typing text 'nfVxgmfd' into text field 'password'.</msg>
+<status status="PASS" starttime="20210123 21:44:57.942" endtime="20210123 21:44:58.018"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:44:57.840" endtime="20210123 21:44:58.018"></status>
+</kw>
+<kw name="${field} = firstname" type="foritem">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${field}</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20210123 21:44:58.019" level="INFO">Typing text 'nfVxgmfd' into text field 'firstname'.</msg>
+<status status="PASS" starttime="20210123 21:44:58.018" endtime="20210123 21:44:58.132"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${field}</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20210123 21:44:58.134" level="INFO">Typing text 'nfVxgmfd' into text field 'firstname'.</msg>
+<status status="PASS" starttime="20210123 21:44:58.132" endtime="20210123 21:44:58.261"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:44:58.018" endtime="20210123 21:44:58.262"></status>
+</kw>
+<kw name="${field} = lastname" type="foritem">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${field}</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20210123 21:44:58.263" level="INFO">Typing text 'nfVxgmfd' into text field 'lastname'.</msg>
+<status status="PASS" starttime="20210123 21:44:58.262" endtime="20210123 21:44:58.377"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${field}</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20210123 21:44:58.378" level="INFO">Typing text 'nfVxgmfd' into text field 'lastname'.</msg>
+<status status="PASS" starttime="20210123 21:44:58.377" endtime="20210123 21:44:58.455"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:44:58.262" endtime="20210123 21:44:58.455"></status>
+</kw>
+<kw name="${field} = phone" type="foritem">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${field}</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20210123 21:44:58.456" level="INFO">Typing text 'nfVxgmfd' into text field 'phone'.</msg>
+<status status="PASS" starttime="20210123 21:44:58.456" endtime="20210123 21:44:58.566"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${field}</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20210123 21:44:58.567" level="INFO">Typing text 'nfVxgmfd' into text field 'phone'.</msg>
+<status status="PASS" starttime="20210123 21:44:58.567" endtime="20210123 21:44:58.656"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:44:58.455" endtime="20210123 21:44:58.656"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:44:57.618" endtime="20210123 21:44:58.656"></status>
+</kw>
+<kw name="Submit Credentials" library="common">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>css:input[type='submit']</arg>
+</arguments>
+<msg timestamp="20210123 21:44:58.661" level="INFO">Clicking button 'css:input[type='submit']'.</msg>
+<status status="PASS" starttime="20210123 21:44:58.658" endtime="20210123 21:44:59.181"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:44:58.657" endtime="20210123 21:44:59.182"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:44:51.684" endtime="20210123 21:44:59.182"></status>
+</kw>
+<msg timestamp="20210123 21:44:59.182" level="INFO">${valid user} = nfVxgmfd</msg>
+<msg timestamp="20210123 21:44:59.182" level="INFO">${valid password} = nfVxgmfd</msg>
+<status status="PASS" starttime="20210123 21:44:51.680" endtime="20210123 21:44:59.182"></status>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<doc>Returns a list containing given items.</doc>
+<arguments>
+<arg>{valid user}</arg>
+<arg>${valid password}</arg>
+</arguments>
+<assign>
+<var>${auth}</var>
+</assign>
+<msg timestamp="20210123 21:44:59.185" level="INFO">${auth} = ['{valid user}', 'nfVxgmfd']</msg>
+<status status="PASS" starttime="20210123 21:44:59.183" endtime="20210123 21:44:59.185"></status>
+</kw>
+<kw name="Create Session" library="RequestsLibrary">
+<doc>Create Session: create a HTTP session to a server</doc>
+<arguments>
+<arg>myssion</arg>
+<arg>${url}</arg>
+<arg>auth=${auth}</arg>
+</arguments>
+<msg timestamp="20210123 21:44:59.186" level="INFO">Creating Session using : alias=myssion, url=http://localhost:8080, headers={},                     cookies={}, auth=&lt;requests.auth.HTTPBasicAuth object at 0x00000174D4A80250&gt;, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20210123 21:44:59.185" endtime="20210123 21:44:59.186"></status>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>Accept=application/json, text/plain, */*</arg>
+<arg>Content-Type=application/json</arg>
+</arguments>
+<assign>
+<var>&amp;{headers}</var>
+</assign>
+<msg timestamp="20210123 21:44:59.187" level="INFO">&amp;{headers} = { Accept=application/json, text/plain, */* | Content-Type=application/json }</msg>
+<status status="PASS" starttime="20210123 21:44:59.187" endtime="20210123 21:44:59.187"></status>
+</kw>
+<kw name="Get Request" library="RequestsLibrary">
+<doc>*DEPRECATED* Please use `GET On Session` instead.</doc>
+<arguments>
+<arg>myssion</arg>
+<arg>/api/users</arg>
+<arg>headers=${headers}</arg>
+</arguments>
+<assign>
+<var>${resp}</var>
+</assign>
+<msg timestamp="20210123 21:44:59.188" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
+<msg timestamp="20210123 21:45:01.216" level="INFO">GET Request : url=http://localhost:8080/api/users 
+ path_url=/api/users 
+ headers={'User-Agent': 'python-requests/2.25.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': 'application/json, text/plain, */*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Authorization': 'Basic e3ZhbGlkIHVzZXJ9Om5mVnhnbWZk'} 
+ body=None 
+ </msg>
+<msg timestamp="20210123 21:45:01.216" level="INFO">GET Response : url=http://localhost:8080/api/users 
+ status=200, reason=OK 
+ headers={'Content-Type': 'application/json', 'Content-Length': '345', 'Server': 'Werkzeug/0.14.1 Python/3.8.6', 'Date': 'Sat, 23 Jan 2021 19:45:01 GMT'} 
+ body={"payload":["19CWQMMm","1PHwpW7a","4Nx0uN7J","72fpfNOy","7roAi5wj","Bh6czgjZ","EwNrb6Nr","GMnme6sJ","JqlSj7VF","OY0hFNYh","QnuxEdow","VO02tlwr","VpFuh2GY","Vt9k12Wv","cXr7QYMA","gxQM8LfJ","h5HxFPgR","j0RU0qMQ","juG9anvM","nfVxgmfd","oJeaz7bu","other","test","tfFeCMaa","ttUvpoBL","tzV8uoaZ","z46mQP6K","z8v63xS4","zH6cLrlt"],"status":"SUCCESS"}
+ 
+ </msg>
+<msg timestamp="20210123 21:45:01.216" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20210123 21:44:59.188" endtime="20210123 21:45:01.216"></status>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${resp.status_code}</arg>
+<arg>200</arg>
+</arguments>
+<msg timestamp="20210123 21:45:01.218" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" starttime="20210123 21:45:01.217" endtime="20210123 21:45:01.218"></status>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary" type="teardown">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20210123 21:45:01.219" endtime="20210123 21:45:03.421"></status>
+</kw>
+<timeout value="10 minutes"></timeout>
+<status status="PASS" starttime="20210123 21:44:51.679" endtime="20210123 21:45:03.422" critical="yes"></status>
+</test>
+<status status="PASS" starttime="20210123 21:44:25.980" endtime="20210123 21:45:03.425"></status>
+</suite>
+<suite id="s1-s2" name="Login Tests" source="C:\Users\jalan\PycharmProjects\remoterobotframework\demo_app\testsuite\login_tests.robot">
+<kw name="Login Suite Setup" type="setup">
+<kw name="Register Username" library="common">
+<assign>
+<var>${VALID USER}</var>
+<var>${VALID PASSWORD}</var>
+</assign>
+<kw name="Generate Random String" library="String">
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<assign>
+<var>${username}</var>
+</assign>
+<msg timestamp="20210123 21:45:03.474" level="INFO">${username} = XLqU8pVF</msg>
+<status status="PASS" starttime="20210123 21:45:03.473" endtime="20210123 21:45:03.474"></status>
+</kw>
+<kw name="Generate Random String" library="String">
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<arguments>
+<arg>${RANDOM STRING LENGTH}</arg>
+<arg>[NUMBERS]</arg>
+</arguments>
+<assign>
+<var>${phone}</var>
+</assign>
+<msg timestamp="20210123 21:45:03.476" level="INFO">${phone} = 0967682525</msg>
+<status status="PASS" starttime="20210123 21:45:03.475" endtime="20210123 21:45:03.476"></status>
+</kw>
+<kw name="Fill Register Details" library="common">
+<arguments>
+<arg>${username}</arg>
+<arg>${username}</arg>
+</arguments>
+<kw name="Open Browser To Register Login" library="common">
+<arguments>
+<arg>${REGISTER URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+</arguments>
+<msg timestamp="20210123 21:45:03.479" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8080/register'.</msg>
+<status status="PASS" starttime="20210123 21:45:03.479" endtime="20210123 21:45:07.152"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210123 21:45:07.153" endtime="20210123 21:45:09.281"></status>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${DELAY}</arg>
+</arguments>
+<status status="PASS" starttime="20210123 21:45:09.282" endtime="20210123 21:45:09.283"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:45:03.478" endtime="20210123 21:45:09.283"></status>
+</kw>
+<kw name="Register Should Be Open" library="common">
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current page title equals ``title``.</doc>
+<arguments>
+<arg>Register - Demo App</arg>
+</arguments>
+<msg timestamp="20210123 21:45:09.295" level="INFO">Page title is 'Register - Demo App'.</msg>
+<status status="PASS" starttime="20210123 21:45:09.284" endtime="20210123 21:45:09.296"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:45:09.283" endtime="20210123 21:45:09.296"></status>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<doc>Returns a list containing given items.</doc>
+<arguments>
+<arg>username</arg>
+<arg>password</arg>
+<arg>firstname</arg>
+<arg>lastname</arg>
+<arg>phone</arg>
+</arguments>
+<assign>
+<var>@{fieldlist}</var>
+</assign>
+<msg timestamp="20210123 21:45:09.298" level="INFO">@{fieldlist} = [ username | password | firstname | lastname | phone ]</msg>
+<status status="PASS" starttime="20210123 21:45:09.297" endtime="20210123 21:45:09.298"></status>
+</kw>
+<kw name="${field} IN [ @{fieldlist} ]" type="for">
+<msg timestamp="20210123 21:45:09.298" level="WARN">Error in file 'C:\Users\jalan\PycharmProjects\remoterobotframework\demo_app\testsuite\common.robot' in FOR loop starting on line 70: For loop header ':FOR' is deprecated. Use 'FOR' instead.</msg>
+<msg timestamp="20210123 21:45:09.299" level="WARN">Error in file 'C:\Users\jalan\PycharmProjects\remoterobotframework\demo_app\testsuite\common.robot' in FOR loop starting on line 70: Marking for loop body with '\' is deprecated. Remove markers and use 'END' instead.</msg>
+<kw name="${field} = username" type="foritem">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${field}</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20210123 21:45:09.305" level="INFO">Typing text 'XLqU8pVF' into text field 'username'.</msg>
+<status status="PASS" starttime="20210123 21:45:09.305" endtime="20210123 21:45:09.461"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${field}</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20210123 21:45:09.462" level="INFO">Typing text 'XLqU8pVF' into text field 'username'.</msg>
+<status status="PASS" starttime="20210123 21:45:09.461" endtime="20210123 21:45:09.550"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:45:09.304" endtime="20210123 21:45:09.550"></status>
+</kw>
+<kw name="${field} = password" type="foritem">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${field}</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20210123 21:45:09.551" level="INFO">Typing text 'XLqU8pVF' into text field 'password'.</msg>
+<status status="PASS" starttime="20210123 21:45:09.551" endtime="20210123 21:45:09.665"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${field}</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20210123 21:45:09.665" level="INFO">Typing text 'XLqU8pVF' into text field 'password'.</msg>
+<status status="PASS" starttime="20210123 21:45:09.665" endtime="20210123 21:45:09.751"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:45:09.551" endtime="20210123 21:45:09.751"></status>
+</kw>
+<kw name="${field} = firstname" type="foritem">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${field}</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20210123 21:45:09.752" level="INFO">Typing text 'XLqU8pVF' into text field 'firstname'.</msg>
+<status status="PASS" starttime="20210123 21:45:09.752" endtime="20210123 21:45:09.863"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${field}</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20210123 21:45:09.864" level="INFO">Typing text 'XLqU8pVF' into text field 'firstname'.</msg>
+<status status="PASS" starttime="20210123 21:45:09.864" endtime="20210123 21:45:09.943"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:45:09.751" endtime="20210123 21:45:09.943"></status>
+</kw>
+<kw name="${field} = lastname" type="foritem">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${field}</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20210123 21:45:09.944" level="INFO">Typing text 'XLqU8pVF' into text field 'lastname'.</msg>
+<status status="PASS" starttime="20210123 21:45:09.943" endtime="20210123 21:45:10.058"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${field}</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20210123 21:45:10.059" level="INFO">Typing text 'XLqU8pVF' into text field 'lastname'.</msg>
+<status status="PASS" starttime="20210123 21:45:10.059" endtime="20210123 21:45:10.149"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:45:09.943" endtime="20210123 21:45:10.149"></status>
+</kw>
+<kw name="${field} = phone" type="foritem">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${field}</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20210123 21:45:10.150" level="INFO">Typing text 'XLqU8pVF' into text field 'phone'.</msg>
+<status status="PASS" starttime="20210123 21:45:10.149" endtime="20210123 21:45:10.269"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${field}</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20210123 21:45:10.271" level="INFO">Typing text 'XLqU8pVF' into text field 'phone'.</msg>
+<status status="PASS" starttime="20210123 21:45:10.270" endtime="20210123 21:45:10.341"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:45:10.149" endtime="20210123 21:45:10.341"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:45:09.298" endtime="20210123 21:45:10.341"></status>
+</kw>
+<kw name="Submit Credentials" library="common">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>css:input[type='submit']</arg>
+</arguments>
+<msg timestamp="20210123 21:45:10.343" level="INFO">Clicking button 'css:input[type='submit']'.</msg>
+<status status="PASS" starttime="20210123 21:45:10.342" endtime="20210123 21:45:10.860"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:45:10.341" endtime="20210123 21:45:10.861"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:45:03.477" endtime="20210123 21:45:10.862"></status>
+</kw>
+<msg timestamp="20210123 21:45:10.863" level="INFO">${VALID USER} = XLqU8pVF</msg>
+<msg timestamp="20210123 21:45:10.863" level="INFO">${VALID PASSWORD} = XLqU8pVF</msg>
+<status status="PASS" starttime="20210123 21:45:03.472" endtime="20210123 21:45:10.863"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${VALID USER}</arg>
+</arguments>
+<msg timestamp="20210123 21:45:10.864" level="INFO">${VALID USER} = XLqU8pVF</msg>
+<status status="PASS" starttime="20210123 21:45:10.864" endtime="20210123 21:45:10.864"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${VALID PASSWORD}</arg>
+</arguments>
+<msg timestamp="20210123 21:45:10.865" level="INFO">${VALID PASSWORD} = XLqU8pVF</msg>
+<status status="PASS" starttime="20210123 21:45:10.865" endtime="20210123 21:45:10.865"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:45:03.471" endtime="20210123 21:45:10.865"></status>
+</kw>
+<test id="s1-s2-t1" name="Verify Login For Successful Case">
+<kw name="Login Test Setup" type="setup">
+<kw name="Open Browser To Register Login" library="common">
+<arguments>
+<arg>${LOGIN URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+</arguments>
+<msg timestamp="20210123 21:45:10.955" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8080/login'.</msg>
+<status status="PASS" starttime="20210123 21:45:10.868" endtime="20210123 21:45:14.637"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210123 21:45:14.637" endtime="20210123 21:45:16.782"></status>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${DELAY}</arg>
+</arguments>
+<status status="PASS" starttime="20210123 21:45:16.782" endtime="20210123 21:45:16.784"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:45:10.867" endtime="20210123 21:45:16.784"></status>
+</kw>
+<kw name="Log In - Demo App" library="common">
+<arguments>
+<arg>${LOGIN URL}</arg>
+</arguments>
+<kw name="Location Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+</arguments>
+<msg timestamp="20210123 21:45:16.792" level="INFO">Current location is 'http://localhost:8080/login'.</msg>
+<status status="PASS" starttime="20210123 21:45:16.785" endtime="20210123 21:45:16.792"></status>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current page title equals ``title``.</doc>
+<arguments>
+<arg>Log In - Demo App</arg>
+</arguments>
+<msg timestamp="20210123 21:45:16.800" level="INFO">Page title is 'Log In - Demo App'.</msg>
+<status status="PASS" starttime="20210123 21:45:16.792" endtime="20210123 21:45:16.801"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:45:16.785" endtime="20210123 21:45:16.801"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:45:10.867" endtime="20210123 21:45:16.801"></status>
+</kw>
+<kw name="Verify Login Behaviour">
+<arguments>
+<arg>${VALID USER}</arg>
+<arg>${VALID PASSWORD}</arg>
+<arg>${USER URL}</arg>
+<arg>${LOGIN_SCREEN}</arg>
+</arguments>
+<kw name="Do Login">
+<arguments>
+<arg>${username}</arg>
+<arg>${password}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>username</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20210123 21:45:16.804" level="INFO">Typing text 'XLqU8pVF' into text field 'username'.</msg>
+<status status="PASS" starttime="20210123 21:45:16.804" endtime="20210123 21:45:16.944"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>password</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20210123 21:45:16.944" level="INFO">Typing text 'XLqU8pVF' into text field 'password'.</msg>
+<status status="PASS" starttime="20210123 21:45:16.944" endtime="20210123 21:45:17.065"></status>
+</kw>
+<kw name="Submit Credentials" library="common">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>css:input[type='submit']</arg>
+</arguments>
+<msg timestamp="20210123 21:45:17.067" level="INFO">Clicking button 'css:input[type='submit']'.</msg>
+<status status="PASS" starttime="20210123 21:45:17.066" endtime="20210123 21:45:17.613"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:45:17.065" endtime="20210123 21:45:17.614"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:45:16.804" endtime="20210123 21:45:17.614"></status>
+</kw>
+<kw name="Verify Login" library="common">
+<arguments>
+<arg>${expected_url}</arg>
+<arg>${expected_msg}</arg>
+</arguments>
+<kw name="Location Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+</arguments>
+<msg timestamp="20210123 21:45:17.624" level="INFO">Current location is 'http://localhost:8080/user'.</msg>
+<status status="PASS" starttime="20210123 21:45:17.616" endtime="20210123 21:45:17.625"></status>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current page title equals ``title``.</doc>
+<arguments>
+<arg>${text}</arg>
+</arguments>
+<msg timestamp="20210123 21:45:17.637" level="INFO">Page title is 'User Information - Demo App'.</msg>
+<status status="PASS" starttime="20210123 21:45:17.626" endtime="20210123 21:45:17.637"></status>
+</kw>
+<kw name="Go To Log In - Demo App" library="common">
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${LOGIN URL}</arg>
+</arguments>
+<msg timestamp="20210123 21:45:17.640" level="INFO">Opening url 'http://localhost:8080/login'</msg>
+<status status="PASS" starttime="20210123 21:45:17.639" endtime="20210123 21:45:17.752"></status>
+</kw>
+<kw name="Log In - Demo App" library="common">
+<arguments>
+<arg>${LOGIN URL}</arg>
+</arguments>
+<kw name="Location Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+</arguments>
+<msg timestamp="20210123 21:45:17.762" level="INFO">Current location is 'http://localhost:8080/login'.</msg>
+<status status="PASS" starttime="20210123 21:45:17.753" endtime="20210123 21:45:17.762"></status>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current page title equals ``title``.</doc>
+<arguments>
+<arg>Log In - Demo App</arg>
+</arguments>
+<msg timestamp="20210123 21:45:17.770" level="INFO">Page title is 'Log In - Demo App'.</msg>
+<status status="PASS" starttime="20210123 21:45:17.763" endtime="20210123 21:45:17.770"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:45:17.752" endtime="20210123 21:45:17.770"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:45:17.638" endtime="20210123 21:45:17.771"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:45:17.615" endtime="20210123 21:45:17.771"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:45:16.802" endtime="20210123 21:45:17.771"></status>
+</kw>
+<kw name="Login Test Teardown" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210123 21:45:17.773" endtime="20210123 21:45:20.080"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:45:17.772" endtime="20210123 21:45:20.080"></status>
+</kw>
+<tags>
+<tag>login</tag>
+<tag>smoke-test</tag>
+</tags>
+<timeout value="10 minutes"></timeout>
+<status status="PASS" starttime="20210123 21:45:10.865" endtime="20210123 21:45:20.081" critical="yes"></status>
+</test>
+<test id="s1-s2-t2" name="Verify Login With Wrong User">
+<kw name="Login Test Setup" type="setup">
+<kw name="Open Browser To Register Login" library="common">
+<arguments>
+<arg>${LOGIN URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+</arguments>
+<msg timestamp="20210123 21:45:20.085" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8080/login'.</msg>
+<status status="PASS" starttime="20210123 21:45:20.084" endtime="20210123 21:45:23.761"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210123 21:45:23.761" endtime="20210123 21:45:25.909"></status>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${DELAY}</arg>
+</arguments>
+<status status="PASS" starttime="20210123 21:45:25.910" endtime="20210123 21:45:25.913"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:45:20.084" endtime="20210123 21:45:25.913"></status>
+</kw>
+<kw name="Log In - Demo App" library="common">
+<arguments>
+<arg>${LOGIN URL}</arg>
+</arguments>
+<kw name="Location Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+</arguments>
+<msg timestamp="20210123 21:45:25.927" level="INFO">Current location is 'http://localhost:8080/login'.</msg>
+<status status="PASS" starttime="20210123 21:45:25.915" endtime="20210123 21:45:25.927"></status>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current page title equals ``title``.</doc>
+<arguments>
+<arg>Log In - Demo App</arg>
+</arguments>
+<msg timestamp="20210123 21:45:25.936" level="INFO">Page title is 'Log In - Demo App'.</msg>
+<status status="PASS" starttime="20210123 21:45:25.928" endtime="20210123 21:45:25.936"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:45:25.914" endtime="20210123 21:45:25.936"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:45:20.084" endtime="20210123 21:45:25.937"></status>
+</kw>
+<kw name="Verify Login Behaviour">
+<arguments>
+<arg>${WRONG USERNAME}</arg>
+<arg>${VALID PASSWORD}</arg>
+<arg>${ERROR URL}</arg>
+<arg>${FAILURE_MSG}</arg>
+</arguments>
+<kw name="Do Login">
+<arguments>
+<arg>${username}</arg>
+<arg>${password}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>username</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20210123 21:45:25.942" level="INFO">Typing text 'dummyuser' into text field 'username'.</msg>
+<status status="PASS" starttime="20210123 21:45:25.940" endtime="20210123 21:45:26.069"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>password</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20210123 21:45:26.071" level="INFO">Typing text 'XLqU8pVF' into text field 'password'.</msg>
+<status status="PASS" starttime="20210123 21:45:26.070" endtime="20210123 21:45:26.195"></status>
+</kw>
+<kw name="Submit Credentials" library="common">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>css:input[type='submit']</arg>
+</arguments>
+<msg timestamp="20210123 21:45:26.198" level="INFO">Clicking button 'css:input[type='submit']'.</msg>
+<status status="PASS" starttime="20210123 21:45:26.197" endtime="20210123 21:45:26.655"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:45:26.196" endtime="20210123 21:45:26.656"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:45:25.939" endtime="20210123 21:45:26.656"></status>
+</kw>
+<kw name="Verify Login" library="common">
+<arguments>
+<arg>${expected_url}</arg>
+<arg>${expected_msg}</arg>
+</arguments>
+<kw name="Location Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+</arguments>
+<msg timestamp="20210123 21:45:26.671" level="INFO">Current location is 'http://localhost:8080/error'.</msg>
+<status status="PASS" starttime="20210123 21:45:26.658" endtime="20210123 21:45:26.672"></status>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current page title equals ``title``.</doc>
+<arguments>
+<arg>${text}</arg>
+</arguments>
+<msg timestamp="20210123 21:45:26.680" level="INFO">Page title is 'Login Failure - Demo App'.</msg>
+<status status="PASS" starttime="20210123 21:45:26.672" endtime="20210123 21:45:26.680"></status>
+</kw>
+<kw name="Go To Log In - Demo App" library="common">
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${LOGIN URL}</arg>
+</arguments>
+<msg timestamp="20210123 21:45:26.683" level="INFO">Opening url 'http://localhost:8080/login'</msg>
+<status status="PASS" starttime="20210123 21:45:26.682" endtime="20210123 21:45:26.873"></status>
+</kw>
+<kw name="Log In - Demo App" library="common">
+<arguments>
+<arg>${LOGIN URL}</arg>
+</arguments>
+<kw name="Location Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+</arguments>
+<msg timestamp="20210123 21:45:26.893" level="INFO">Current location is 'http://localhost:8080/login'.</msg>
+<status status="PASS" starttime="20210123 21:45:26.874" endtime="20210123 21:45:26.894"></status>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current page title equals ``title``.</doc>
+<arguments>
+<arg>Log In - Demo App</arg>
+</arguments>
+<msg timestamp="20210123 21:45:26.905" level="INFO">Page title is 'Log In - Demo App'.</msg>
+<status status="PASS" starttime="20210123 21:45:26.895" endtime="20210123 21:45:26.905"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:45:26.873" endtime="20210123 21:45:26.906"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:45:26.681" endtime="20210123 21:45:26.906"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:45:26.657" endtime="20210123 21:45:26.906"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:45:25.937" endtime="20210123 21:45:26.906"></status>
+</kw>
+<kw name="Login Test Teardown" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210123 21:45:26.909" endtime="20210123 21:45:29.142"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:45:26.908" endtime="20210123 21:45:29.143"></status>
+</kw>
+<tags>
+<tag>login</tag>
+<tag>smoke-test</tag>
+</tags>
+<timeout value="10 minutes"></timeout>
+<status status="PASS" starttime="20210123 21:45:20.083" endtime="20210123 21:45:29.143" critical="yes"></status>
+</test>
+<test id="s1-s2-t3" name="Verify Login With Wrong Password">
+<kw name="Login Test Setup" type="setup">
+<kw name="Open Browser To Register Login" library="common">
+<arguments>
+<arg>${LOGIN URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+</arguments>
+<msg timestamp="20210123 21:45:29.152" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8080/login'.</msg>
+<status status="PASS" starttime="20210123 21:45:29.150" endtime="20210123 21:45:32.812"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210123 21:45:32.813" endtime="20210123 21:45:34.968"></status>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${DELAY}</arg>
+</arguments>
+<status status="PASS" starttime="20210123 21:45:34.969" endtime="20210123 21:45:34.969"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:45:29.148" endtime="20210123 21:45:34.970"></status>
+</kw>
+<kw name="Log In - Demo App" library="common">
+<arguments>
+<arg>${LOGIN URL}</arg>
+</arguments>
+<kw name="Location Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+</arguments>
+<msg timestamp="20210123 21:45:34.979" level="INFO">Current location is 'http://localhost:8080/login'.</msg>
+<status status="PASS" starttime="20210123 21:45:34.970" endtime="20210123 21:45:34.979"></status>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current page title equals ``title``.</doc>
+<arguments>
+<arg>Log In - Demo App</arg>
+</arguments>
+<msg timestamp="20210123 21:45:34.986" level="INFO">Page title is 'Log In - Demo App'.</msg>
+<status status="PASS" starttime="20210123 21:45:34.979" endtime="20210123 21:45:34.986"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:45:34.970" endtime="20210123 21:45:34.986"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:45:29.148" endtime="20210123 21:45:34.986"></status>
+</kw>
+<kw name="Verify Login Behaviour">
+<arguments>
+<arg>${VALID USER}</arg>
+<arg>${WRONG PASSWORD}</arg>
+<arg>${ERROR URL}</arg>
+<arg>${FAILURE_MSG}</arg>
+</arguments>
+<kw name="Do Login">
+<arguments>
+<arg>${username}</arg>
+<arg>${password}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>username</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20210123 21:45:34.990" level="INFO">Typing text 'XLqU8pVF' into text field 'username'.</msg>
+<status status="PASS" starttime="20210123 21:45:34.989" endtime="20210123 21:45:35.134"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>password</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20210123 21:45:35.136" level="INFO">Typing text 'welcome1' into text field 'password'.</msg>
+<status status="PASS" starttime="20210123 21:45:35.134" endtime="20210123 21:45:35.272"></status>
+</kw>
+<kw name="Submit Credentials" library="common">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>css:input[type='submit']</arg>
+</arguments>
+<msg timestamp="20210123 21:45:35.273" level="INFO">Clicking button 'css:input[type='submit']'.</msg>
+<status status="PASS" starttime="20210123 21:45:35.273" endtime="20210123 21:45:35.770"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:45:35.272" endtime="20210123 21:45:35.770"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:45:34.988" endtime="20210123 21:45:35.770"></status>
+</kw>
+<kw name="Verify Login" library="common">
+<arguments>
+<arg>${expected_url}</arg>
+<arg>${expected_msg}</arg>
+</arguments>
+<kw name="Location Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+</arguments>
+<msg timestamp="20210123 21:45:35.782" level="INFO">Current location is 'http://localhost:8080/error'.</msg>
+<status status="PASS" starttime="20210123 21:45:35.771" endtime="20210123 21:45:35.783"></status>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current page title equals ``title``.</doc>
+<arguments>
+<arg>${text}</arg>
+</arguments>
+<msg timestamp="20210123 21:45:35.792" level="INFO">Page title is 'Login Failure - Demo App'.</msg>
+<status status="PASS" starttime="20210123 21:45:35.783" endtime="20210123 21:45:35.793"></status>
+</kw>
+<kw name="Go To Log In - Demo App" library="common">
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${LOGIN URL}</arg>
+</arguments>
+<msg timestamp="20210123 21:45:35.797" level="INFO">Opening url 'http://localhost:8080/login'</msg>
+<status status="PASS" starttime="20210123 21:45:35.795" endtime="20210123 21:45:35.938"></status>
+</kw>
+<kw name="Log In - Demo App" library="common">
+<arguments>
+<arg>${LOGIN URL}</arg>
+</arguments>
+<kw name="Location Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+</arguments>
+<msg timestamp="20210123 21:45:35.948" level="INFO">Current location is 'http://localhost:8080/login'.</msg>
+<status status="PASS" starttime="20210123 21:45:35.939" endtime="20210123 21:45:35.949"></status>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current page title equals ``title``.</doc>
+<arguments>
+<arg>Log In - Demo App</arg>
+</arguments>
+<msg timestamp="20210123 21:45:35.966" level="INFO">Page title is 'Log In - Demo App'.</msg>
+<status status="PASS" starttime="20210123 21:45:35.949" endtime="20210123 21:45:35.967"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:45:35.938" endtime="20210123 21:45:35.967"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:45:35.793" endtime="20210123 21:45:35.967"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:45:35.770" endtime="20210123 21:45:35.968"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:45:34.987" endtime="20210123 21:45:35.968"></status>
+</kw>
+<kw name="Login Test Teardown" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210123 21:45:35.969" endtime="20210123 21:45:38.182"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:45:35.969" endtime="20210123 21:45:38.183"></status>
+</kw>
+<tags>
+<tag>login</tag>
+<tag>smoke-test</tag>
+</tags>
+<timeout value="10 minutes"></timeout>
+<status status="PASS" starttime="20210123 21:45:29.146" endtime="20210123 21:45:38.183" critical="yes"></status>
+</test>
+<test id="s1-s2-t4" name="Verify Login With Wrong User And Password">
+<kw name="Login Test Setup" type="setup">
+<kw name="Open Browser To Register Login" library="common">
+<arguments>
+<arg>${LOGIN URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+</arguments>
+<msg timestamp="20210123 21:45:38.218" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8080/login'.</msg>
+<status status="PASS" starttime="20210123 21:45:38.215" endtime="20210123 21:45:41.918"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210123 21:45:41.918" endtime="20210123 21:45:44.056"></status>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${DELAY}</arg>
+</arguments>
+<status status="PASS" starttime="20210123 21:45:44.056" endtime="20210123 21:45:44.057"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:45:38.213" endtime="20210123 21:45:44.058"></status>
+</kw>
+<kw name="Log In - Demo App" library="common">
+<arguments>
+<arg>${LOGIN URL}</arg>
+</arguments>
+<kw name="Location Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+</arguments>
+<msg timestamp="20210123 21:45:44.072" level="INFO">Current location is 'http://localhost:8080/login'.</msg>
+<status status="PASS" starttime="20210123 21:45:44.060" endtime="20210123 21:45:44.072"></status>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current page title equals ``title``.</doc>
+<arguments>
+<arg>Log In - Demo App</arg>
+</arguments>
+<msg timestamp="20210123 21:45:44.082" level="INFO">Page title is 'Log In - Demo App'.</msg>
+<status status="PASS" starttime="20210123 21:45:44.072" endtime="20210123 21:45:44.083"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:45:44.059" endtime="20210123 21:45:44.083"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:45:38.211" endtime="20210123 21:45:44.084"></status>
+</kw>
+<kw name="Verify Login Behaviour">
+<arguments>
+<arg>${WRONG USERNAME}</arg>
+<arg>${WRONG PASSWORD}</arg>
+<arg>${ERROR URL}</arg>
+<arg>${FAILURE_MSG}</arg>
+</arguments>
+<kw name="Do Login">
+<arguments>
+<arg>${username}</arg>
+<arg>${password}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>username</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20210123 21:45:44.089" level="INFO">Typing text 'dummyuser' into text field 'username'.</msg>
+<status status="PASS" starttime="20210123 21:45:44.088" endtime="20210123 21:45:44.241"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>password</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20210123 21:45:44.242" level="INFO">Typing text 'welcome1' into text field 'password'.</msg>
+<status status="PASS" starttime="20210123 21:45:44.241" endtime="20210123 21:45:44.383"></status>
+</kw>
+<kw name="Submit Credentials" library="common">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>css:input[type='submit']</arg>
+</arguments>
+<msg timestamp="20210123 21:45:44.386" level="INFO">Clicking button 'css:input[type='submit']'.</msg>
+<status status="PASS" starttime="20210123 21:45:44.385" endtime="20210123 21:45:44.859"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:45:44.384" endtime="20210123 21:45:44.859"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:45:44.087" endtime="20210123 21:45:44.860"></status>
+</kw>
+<kw name="Verify Login" library="common">
+<arguments>
+<arg>${expected_url}</arg>
+<arg>${expected_msg}</arg>
+</arguments>
+<kw name="Location Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+</arguments>
+<msg timestamp="20210123 21:45:44.876" level="INFO">Current location is 'http://localhost:8080/error'.</msg>
+<status status="PASS" starttime="20210123 21:45:44.861" endtime="20210123 21:45:44.877"></status>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current page title equals ``title``.</doc>
+<arguments>
+<arg>${text}</arg>
+</arguments>
+<msg timestamp="20210123 21:45:44.885" level="INFO">Page title is 'Login Failure - Demo App'.</msg>
+<status status="PASS" starttime="20210123 21:45:44.877" endtime="20210123 21:45:44.885"></status>
+</kw>
+<kw name="Go To Log In - Demo App" library="common">
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${LOGIN URL}</arg>
+</arguments>
+<msg timestamp="20210123 21:45:44.886" level="INFO">Opening url 'http://localhost:8080/login'</msg>
+<status status="PASS" starttime="20210123 21:45:44.886" endtime="20210123 21:45:45.082"></status>
+</kw>
+<kw name="Log In - Demo App" library="common">
+<arguments>
+<arg>${LOGIN URL}</arg>
+</arguments>
+<kw name="Location Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+</arguments>
+<msg timestamp="20210123 21:45:45.099" level="INFO">Current location is 'http://localhost:8080/login'.</msg>
+<status status="PASS" starttime="20210123 21:45:45.084" endtime="20210123 21:45:45.100"></status>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current page title equals ``title``.</doc>
+<arguments>
+<arg>Log In - Demo App</arg>
+</arguments>
+<msg timestamp="20210123 21:45:45.112" level="INFO">Page title is 'Log In - Demo App'.</msg>
+<status status="PASS" starttime="20210123 21:45:45.100" endtime="20210123 21:45:45.113"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:45:45.082" endtime="20210123 21:45:45.113"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:45:44.885" endtime="20210123 21:45:45.114"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:45:44.860" endtime="20210123 21:45:45.114"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:45:44.086" endtime="20210123 21:45:45.114"></status>
+</kw>
+<kw name="Login Test Teardown" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210123 21:45:45.116" endtime="20210123 21:45:48.350"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:45:45.116" endtime="20210123 21:45:48.351"></status>
+</kw>
+<tags>
+<tag>login</tag>
+<tag>smoke-test</tag>
+</tags>
+<timeout value="10 minutes"></timeout>
+<status status="PASS" starttime="20210123 21:45:38.186" endtime="20210123 21:45:48.352" critical="yes"></status>
+</test>
+<kw name="Login Suite Teardown" type="teardown">
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20210123 21:45:48.365" endtime="20210123 21:45:50.580"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:45:48.363" endtime="20210123 21:45:50.582"></status>
+</kw>
+<doc>Login test-cases in different login combinations</doc>
+<status status="PASS" starttime="20210123 21:45:03.456" endtime="20210123 21:45:50.582"></status>
+</suite>
+<suite id="s1-s3" name="Register Tests" source="C:\Users\jalan\PycharmProjects\remoterobotframework\demo_app\testsuite\register_tests.robot">
+<test id="s1-s3-t1" name="Valid Register">
+<kw name="Register Username" library="common">
+<assign>
+<var>${valid user}</var>
+<var>${VALID PASSWORD1}</var>
+</assign>
+<kw name="Generate Random String" library="String">
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<assign>
+<var>${username}</var>
+</assign>
+<msg timestamp="20210123 21:45:50.641" level="INFO">${username} = xZoWm5UO</msg>
+<status status="PASS" starttime="20210123 21:45:50.639" endtime="20210123 21:45:50.641"></status>
+</kw>
+<kw name="Generate Random String" library="String">
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<arguments>
+<arg>${RANDOM STRING LENGTH}</arg>
+<arg>[NUMBERS]</arg>
+</arguments>
+<assign>
+<var>${phone}</var>
+</assign>
+<msg timestamp="20210123 21:45:50.642" level="INFO">${phone} = 6131456830</msg>
+<status status="PASS" starttime="20210123 21:45:50.641" endtime="20210123 21:45:50.642"></status>
+</kw>
+<kw name="Fill Register Details" library="common">
+<arguments>
+<arg>${username}</arg>
+<arg>${username}</arg>
+</arguments>
+<kw name="Open Browser To Register Login" library="common">
+<arguments>
+<arg>${REGISTER URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+</arguments>
+<msg timestamp="20210123 21:45:50.646" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8080/register'.</msg>
+<status status="PASS" starttime="20210123 21:45:50.645" endtime="20210123 21:45:54.302"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210123 21:45:54.303" endtime="20210123 21:45:56.436"></status>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${DELAY}</arg>
+</arguments>
+<status status="PASS" starttime="20210123 21:45:56.437" endtime="20210123 21:45:56.437"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:45:50.644" endtime="20210123 21:45:56.439"></status>
+</kw>
+<kw name="Register Should Be Open" library="common">
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current page title equals ``title``.</doc>
+<arguments>
+<arg>Register - Demo App</arg>
+</arguments>
+<msg timestamp="20210123 21:45:56.449" level="INFO">Page title is 'Register - Demo App'.</msg>
+<status status="PASS" starttime="20210123 21:45:56.440" endtime="20210123 21:45:56.449"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:45:56.439" endtime="20210123 21:45:56.449"></status>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<doc>Returns a list containing given items.</doc>
+<arguments>
+<arg>username</arg>
+<arg>password</arg>
+<arg>firstname</arg>
+<arg>lastname</arg>
+<arg>phone</arg>
+</arguments>
+<assign>
+<var>@{fieldlist}</var>
+</assign>
+<msg timestamp="20210123 21:45:56.451" level="INFO">@{fieldlist} = [ username | password | firstname | lastname | phone ]</msg>
+<status status="PASS" starttime="20210123 21:45:56.450" endtime="20210123 21:45:56.451"></status>
+</kw>
+<kw name="${field} IN [ @{fieldlist} ]" type="for">
+<msg timestamp="20210123 21:45:56.451" level="WARN">Error in file 'C:\Users\jalan\PycharmProjects\remoterobotframework\demo_app\testsuite\common.robot' in FOR loop starting on line 70: For loop header ':FOR' is deprecated. Use 'FOR' instead.</msg>
+<msg timestamp="20210123 21:45:56.453" level="WARN">Error in file 'C:\Users\jalan\PycharmProjects\remoterobotframework\demo_app\testsuite\common.robot' in FOR loop starting on line 70: Marking for loop body with '\' is deprecated. Remove markers and use 'END' instead.</msg>
+<kw name="${field} = username" type="foritem">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${field}</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20210123 21:45:56.531" level="INFO">Typing text 'xZoWm5UO' into text field 'username'.</msg>
+<status status="PASS" starttime="20210123 21:45:56.524" endtime="20210123 21:45:56.670"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${field}</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20210123 21:45:56.671" level="INFO">Typing text 'xZoWm5UO' into text field 'username'.</msg>
+<status status="PASS" starttime="20210123 21:45:56.670" endtime="20210123 21:45:56.755"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:45:56.523" endtime="20210123 21:45:56.756"></status>
+</kw>
+<kw name="${field} = password" type="foritem">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${field}</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20210123 21:45:56.757" level="INFO">Typing text 'xZoWm5UO' into text field 'password'.</msg>
+<status status="PASS" starttime="20210123 21:45:56.756" endtime="20210123 21:45:56.871"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${field}</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20210123 21:45:56.873" level="INFO">Typing text 'xZoWm5UO' into text field 'password'.</msg>
+<status status="PASS" starttime="20210123 21:45:56.871" endtime="20210123 21:45:56.955"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:45:56.756" endtime="20210123 21:45:56.955"></status>
+</kw>
+<kw name="${field} = firstname" type="foritem">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${field}</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20210123 21:45:56.956" level="INFO">Typing text 'xZoWm5UO' into text field 'firstname'.</msg>
+<status status="PASS" starttime="20210123 21:45:56.955" endtime="20210123 21:45:57.078"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${field}</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20210123 21:45:57.079" level="INFO">Typing text 'xZoWm5UO' into text field 'firstname'.</msg>
+<status status="PASS" starttime="20210123 21:45:57.078" endtime="20210123 21:45:57.153"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:45:56.955" endtime="20210123 21:45:57.153"></status>
+</kw>
+<kw name="${field} = lastname" type="foritem">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${field}</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20210123 21:45:57.154" level="INFO">Typing text 'xZoWm5UO' into text field 'lastname'.</msg>
+<status status="PASS" starttime="20210123 21:45:57.153" endtime="20210123 21:45:57.274"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${field}</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20210123 21:45:57.275" level="INFO">Typing text 'xZoWm5UO' into text field 'lastname'.</msg>
+<status status="PASS" starttime="20210123 21:45:57.274" endtime="20210123 21:45:57.357"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:45:57.153" endtime="20210123 21:45:57.357"></status>
+</kw>
+<kw name="${field} = phone" type="foritem">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${field}</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20210123 21:45:57.359" level="INFO">Typing text 'xZoWm5UO' into text field 'phone'.</msg>
+<status status="PASS" starttime="20210123 21:45:57.357" endtime="20210123 21:45:57.482"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${field}</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20210123 21:45:57.483" level="INFO">Typing text 'xZoWm5UO' into text field 'phone'.</msg>
+<status status="PASS" starttime="20210123 21:45:57.482" endtime="20210123 21:45:57.558"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:45:57.357" endtime="20210123 21:45:57.558"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:45:56.451" endtime="20210123 21:45:57.558"></status>
+</kw>
+<kw name="Submit Credentials" library="common">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>css:input[type='submit']</arg>
+</arguments>
+<msg timestamp="20210123 21:45:57.559" level="INFO">Clicking button 'css:input[type='submit']'.</msg>
+<status status="PASS" starttime="20210123 21:45:57.559" endtime="20210123 21:45:58.043"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:45:57.558" endtime="20210123 21:45:58.043"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:45:50.643" endtime="20210123 21:45:58.044"></status>
+</kw>
+<msg timestamp="20210123 21:45:58.045" level="INFO">${valid user} = xZoWm5UO</msg>
+<msg timestamp="20210123 21:45:58.045" level="INFO">${VALID PASSWORD1} = xZoWm5UO</msg>
+<status status="PASS" starttime="20210123 21:45:50.639" endtime="20210123 21:45:58.045"></status>
+</kw>
+<kw name="Verify Login" library="common">
+<arguments>
+<arg>${LOGIN URL}</arg>
+<arg>Log In - Demo App</arg>
+</arguments>
+<kw name="Location Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+</arguments>
+<msg timestamp="20210123 21:45:58.062" level="INFO">Current location is 'http://localhost:8080/login'.</msg>
+<status status="PASS" starttime="20210123 21:45:58.049" endtime="20210123 21:45:58.062"></status>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current page title equals ``title``.</doc>
+<arguments>
+<arg>${text}</arg>
+</arguments>
+<msg timestamp="20210123 21:45:58.069" level="INFO">Page title is 'Log In - Demo App'.</msg>
+<status status="PASS" starttime="20210123 21:45:58.062" endtime="20210123 21:45:58.069"></status>
+</kw>
+<kw name="Go To Log In - Demo App" library="common">
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${LOGIN URL}</arg>
+</arguments>
+<msg timestamp="20210123 21:45:58.071" level="INFO">Opening url 'http://localhost:8080/login'</msg>
+<status status="PASS" starttime="20210123 21:45:58.070" endtime="20210123 21:45:58.209"></status>
+</kw>
+<kw name="Log In - Demo App" library="common">
+<arguments>
+<arg>${LOGIN URL}</arg>
+</arguments>
+<kw name="Location Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+</arguments>
+<msg timestamp="20210123 21:45:58.221" level="INFO">Current location is 'http://localhost:8080/login'.</msg>
+<status status="PASS" starttime="20210123 21:45:58.211" endtime="20210123 21:45:58.222"></status>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current page title equals ``title``.</doc>
+<arguments>
+<arg>Log In - Demo App</arg>
+</arguments>
+<msg timestamp="20210123 21:45:58.230" level="INFO">Page title is 'Log In - Demo App'.</msg>
+<status status="PASS" starttime="20210123 21:45:58.222" endtime="20210123 21:45:58.231"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:45:58.210" endtime="20210123 21:45:58.231"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:45:58.069" endtime="20210123 21:45:58.231"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:45:58.047" endtime="20210123 21:45:58.231"></status>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary" type="teardown">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20210123 21:45:58.232" endtime="20210123 21:46:00.457"></status>
+</kw>
+<timeout value="10 minutes"></timeout>
+<status status="PASS" starttime="20210123 21:45:50.632" endtime="20210123 21:46:00.460" critical="yes"></status>
+</test>
+<test id="s1-s3-t2" name="Valid Already Register User">
+<kw name="Register Username" library="common">
+<assign>
+<var>${valid user}</var>
+<var>${valid password}</var>
+</assign>
+<kw name="Generate Random String" library="String">
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<assign>
+<var>${username}</var>
+</assign>
+<msg timestamp="20210123 21:46:00.496" level="INFO">${username} = sLaWmpUz</msg>
+<status status="PASS" starttime="20210123 21:46:00.494" endtime="20210123 21:46:00.497"></status>
+</kw>
+<kw name="Generate Random String" library="String">
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<arguments>
+<arg>${RANDOM STRING LENGTH}</arg>
+<arg>[NUMBERS]</arg>
+</arguments>
+<assign>
+<var>${phone}</var>
+</assign>
+<msg timestamp="20210123 21:46:00.500" level="INFO">${phone} = 9775520441</msg>
+<status status="PASS" starttime="20210123 21:46:00.497" endtime="20210123 21:46:00.500"></status>
+</kw>
+<kw name="Fill Register Details" library="common">
+<arguments>
+<arg>${username}</arg>
+<arg>${username}</arg>
+</arguments>
+<kw name="Open Browser To Register Login" library="common">
+<arguments>
+<arg>${REGISTER URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+</arguments>
+<msg timestamp="20210123 21:46:00.508" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8080/register'.</msg>
+<status status="PASS" starttime="20210123 21:46:00.505" endtime="20210123 21:46:04.186"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210123 21:46:04.186" endtime="20210123 21:46:06.322"></status>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${DELAY}</arg>
+</arguments>
+<status status="PASS" starttime="20210123 21:46:06.322" endtime="20210123 21:46:06.324"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:46:00.504" endtime="20210123 21:46:06.324"></status>
+</kw>
+<kw name="Register Should Be Open" library="common">
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current page title equals ``title``.</doc>
+<arguments>
+<arg>Register - Demo App</arg>
+</arguments>
+<msg timestamp="20210123 21:46:06.334" level="INFO">Page title is 'Register - Demo App'.</msg>
+<status status="PASS" starttime="20210123 21:46:06.325" endtime="20210123 21:46:06.334"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:46:06.324" endtime="20210123 21:46:06.335"></status>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<doc>Returns a list containing given items.</doc>
+<arguments>
+<arg>username</arg>
+<arg>password</arg>
+<arg>firstname</arg>
+<arg>lastname</arg>
+<arg>phone</arg>
+</arguments>
+<assign>
+<var>@{fieldlist}</var>
+</assign>
+<msg timestamp="20210123 21:46:06.336" level="INFO">@{fieldlist} = [ username | password | firstname | lastname | phone ]</msg>
+<status status="PASS" starttime="20210123 21:46:06.335" endtime="20210123 21:46:06.336"></status>
+</kw>
+<kw name="${field} IN [ @{fieldlist} ]" type="for">
+<msg timestamp="20210123 21:46:06.336" level="WARN">Error in file 'C:\Users\jalan\PycharmProjects\remoterobotframework\demo_app\testsuite\common.robot' in FOR loop starting on line 70: For loop header ':FOR' is deprecated. Use 'FOR' instead.</msg>
+<msg timestamp="20210123 21:46:06.340" level="WARN">Error in file 'C:\Users\jalan\PycharmProjects\remoterobotframework\demo_app\testsuite\common.robot' in FOR loop starting on line 70: Marking for loop body with '\' is deprecated. Remove markers and use 'END' instead.</msg>
+<kw name="${field} = username" type="foritem">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${field}</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20210123 21:46:06.344" level="INFO">Typing text 'sLaWmpUz' into text field 'username'.</msg>
+<status status="PASS" starttime="20210123 21:46:06.343" endtime="20210123 21:46:06.489"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${field}</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20210123 21:46:06.491" level="INFO">Typing text 'sLaWmpUz' into text field 'username'.</msg>
+<status status="PASS" starttime="20210123 21:46:06.489" endtime="20210123 21:46:06.611"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:46:06.343" endtime="20210123 21:46:06.611"></status>
+</kw>
+<kw name="${field} = password" type="foritem">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${field}</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20210123 21:46:06.615" level="INFO">Typing text 'sLaWmpUz' into text field 'password'.</msg>
+<status status="PASS" starttime="20210123 21:46:06.613" endtime="20210123 21:46:06.742"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${field}</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20210123 21:46:06.744" level="INFO">Typing text 'sLaWmpUz' into text field 'password'.</msg>
+<status status="PASS" starttime="20210123 21:46:06.743" endtime="20210123 21:46:06.827"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:46:06.612" endtime="20210123 21:46:06.828"></status>
+</kw>
+<kw name="${field} = firstname" type="foritem">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${field}</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20210123 21:46:06.831" level="INFO">Typing text 'sLaWmpUz' into text field 'firstname'.</msg>
+<status status="PASS" starttime="20210123 21:46:06.829" endtime="20210123 21:46:06.942"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${field}</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20210123 21:46:06.943" level="INFO">Typing text 'sLaWmpUz' into text field 'firstname'.</msg>
+<status status="PASS" starttime="20210123 21:46:06.942" endtime="20210123 21:46:07.034"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:46:06.828" endtime="20210123 21:46:07.034"></status>
+</kw>
+<kw name="${field} = lastname" type="foritem">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${field}</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20210123 21:46:07.036" level="INFO">Typing text 'sLaWmpUz' into text field 'lastname'.</msg>
+<status status="PASS" starttime="20210123 21:46:07.035" endtime="20210123 21:46:07.162"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${field}</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20210123 21:46:07.163" level="INFO">Typing text 'sLaWmpUz' into text field 'lastname'.</msg>
+<status status="PASS" starttime="20210123 21:46:07.162" endtime="20210123 21:46:07.236"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:46:07.035" endtime="20210123 21:46:07.236"></status>
+</kw>
+<kw name="${field} = phone" type="foritem">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${field}</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20210123 21:46:07.237" level="INFO">Typing text 'sLaWmpUz' into text field 'phone'.</msg>
+<status status="PASS" starttime="20210123 21:46:07.236" endtime="20210123 21:46:07.358"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${field}</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20210123 21:46:07.360" level="INFO">Typing text 'sLaWmpUz' into text field 'phone'.</msg>
+<status status="PASS" starttime="20210123 21:46:07.358" endtime="20210123 21:46:07.443"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:46:07.236" endtime="20210123 21:46:07.443"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:46:06.336" endtime="20210123 21:46:07.443"></status>
+</kw>
+<kw name="Submit Credentials" library="common">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>css:input[type='submit']</arg>
+</arguments>
+<msg timestamp="20210123 21:46:07.446" level="INFO">Clicking button 'css:input[type='submit']'.</msg>
+<status status="PASS" starttime="20210123 21:46:07.445" endtime="20210123 21:46:07.936"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:46:07.444" endtime="20210123 21:46:07.937"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:46:00.501" endtime="20210123 21:46:07.937"></status>
+</kw>
+<msg timestamp="20210123 21:46:07.938" level="INFO">${valid user} = sLaWmpUz</msg>
+<msg timestamp="20210123 21:46:07.938" level="INFO">${valid password} = sLaWmpUz</msg>
+<status status="PASS" starttime="20210123 21:46:00.492" endtime="20210123 21:46:07.938"></status>
+</kw>
+<kw name="Fill Register Details" library="common">
+<arguments>
+<arg>${valid user}</arg>
+<arg>${valid password}</arg>
+</arguments>
+<kw name="Open Browser To Register Login" library="common">
+<arguments>
+<arg>${REGISTER URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+</arguments>
+<msg timestamp="20210123 21:46:07.945" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8080/register'.</msg>
+<status status="PASS" starttime="20210123 21:46:07.943" endtime="20210123 21:46:11.643"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210123 21:46:11.643" endtime="20210123 21:46:13.812"></status>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${DELAY}</arg>
+</arguments>
+<status status="PASS" starttime="20210123 21:46:13.812" endtime="20210123 21:46:13.814"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:46:07.941" endtime="20210123 21:46:13.814"></status>
+</kw>
+<kw name="Register Should Be Open" library="common">
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current page title equals ``title``.</doc>
+<arguments>
+<arg>Register - Demo App</arg>
+</arguments>
+<msg timestamp="20210123 21:46:13.824" level="INFO">Page title is 'Register - Demo App'.</msg>
+<status status="PASS" starttime="20210123 21:46:13.815" endtime="20210123 21:46:13.824"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:46:13.814" endtime="20210123 21:46:13.824"></status>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<doc>Returns a list containing given items.</doc>
+<arguments>
+<arg>username</arg>
+<arg>password</arg>
+<arg>firstname</arg>
+<arg>lastname</arg>
+<arg>phone</arg>
+</arguments>
+<assign>
+<var>@{fieldlist}</var>
+</assign>
+<msg timestamp="20210123 21:46:13.825" level="INFO">@{fieldlist} = [ username | password | firstname | lastname | phone ]</msg>
+<status status="PASS" starttime="20210123 21:46:13.825" endtime="20210123 21:46:13.826"></status>
+</kw>
+<kw name="${field} IN [ @{fieldlist} ]" type="for">
+<msg timestamp="20210123 21:46:13.826" level="WARN">Error in file 'C:\Users\jalan\PycharmProjects\remoterobotframework\demo_app\testsuite\common.robot' in FOR loop starting on line 70: For loop header ':FOR' is deprecated. Use 'FOR' instead.</msg>
+<msg timestamp="20210123 21:46:13.828" level="WARN">Error in file 'C:\Users\jalan\PycharmProjects\remoterobotframework\demo_app\testsuite\common.robot' in FOR loop starting on line 70: Marking for loop body with '\' is deprecated. Remove markers and use 'END' instead.</msg>
+<kw name="${field} = username" type="foritem">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${field}</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20210123 21:46:13.831" level="INFO">Typing text 'sLaWmpUz' into text field 'username'.</msg>
+<status status="PASS" starttime="20210123 21:46:13.830" endtime="20210123 21:46:13.972"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${field}</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20210123 21:46:13.973" level="INFO">Typing text 'sLaWmpUz' into text field 'username'.</msg>
+<status status="PASS" starttime="20210123 21:46:13.972" endtime="20210123 21:46:14.060"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:46:13.830" endtime="20210123 21:46:14.060"></status>
+</kw>
+<kw name="${field} = password" type="foritem">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${field}</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20210123 21:46:14.061" level="INFO">Typing text 'sLaWmpUz' into text field 'password'.</msg>
+<status status="PASS" starttime="20210123 21:46:14.060" endtime="20210123 21:46:14.181"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${field}</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20210123 21:46:14.182" level="INFO">Typing text 'sLaWmpUz' into text field 'password'.</msg>
+<status status="PASS" starttime="20210123 21:46:14.181" endtime="20210123 21:46:14.271"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:46:14.060" endtime="20210123 21:46:14.271"></status>
+</kw>
+<kw name="${field} = firstname" type="foritem">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${field}</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20210123 21:46:14.272" level="INFO">Typing text 'sLaWmpUz' into text field 'firstname'.</msg>
+<status status="PASS" starttime="20210123 21:46:14.271" endtime="20210123 21:46:14.387"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${field}</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20210123 21:46:14.389" level="INFO">Typing text 'sLaWmpUz' into text field 'firstname'.</msg>
+<status status="PASS" starttime="20210123 21:46:14.387" endtime="20210123 21:46:14.473"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:46:14.271" endtime="20210123 21:46:14.474"></status>
+</kw>
+<kw name="${field} = lastname" type="foritem">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${field}</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20210123 21:46:14.476" level="INFO">Typing text 'sLaWmpUz' into text field 'lastname'.</msg>
+<status status="PASS" starttime="20210123 21:46:14.475" endtime="20210123 21:46:14.587"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${field}</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20210123 21:46:14.588" level="INFO">Typing text 'sLaWmpUz' into text field 'lastname'.</msg>
+<status status="PASS" starttime="20210123 21:46:14.587" endtime="20210123 21:46:14.678"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:46:14.474" endtime="20210123 21:46:14.678"></status>
+</kw>
+<kw name="${field} = phone" type="foritem">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${field}</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20210123 21:46:14.680" level="INFO">Typing text 'sLaWmpUz' into text field 'phone'.</msg>
+<status status="PASS" starttime="20210123 21:46:14.679" endtime="20210123 21:46:14.789"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${field}</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20210123 21:46:14.791" level="INFO">Typing text 'sLaWmpUz' into text field 'phone'.</msg>
+<status status="PASS" starttime="20210123 21:46:14.790" endtime="20210123 21:46:14.872"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:46:14.679" endtime="20210123 21:46:14.872"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:46:13.826" endtime="20210123 21:46:14.872"></status>
+</kw>
+<kw name="Submit Credentials" library="common">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>css:input[type='submit']</arg>
+</arguments>
+<msg timestamp="20210123 21:46:14.874" level="INFO">Clicking button 'css:input[type='submit']'.</msg>
+<status status="PASS" starttime="20210123 21:46:14.872" endtime="20210123 21:46:15.326"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:46:14.872" endtime="20210123 21:46:15.326"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:46:07.940" endtime="20210123 21:46:15.326"></status>
+</kw>
+<kw name="Verify Login" library="common">
+<arguments>
+<arg>${REGISTER URL}</arg>
+<arg>Register - Demo App</arg>
+</arguments>
+<kw name="Location Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+</arguments>
+<msg timestamp="20210123 21:46:15.338" level="INFO">Current location is 'http://localhost:8080/register'.</msg>
+<status status="PASS" starttime="20210123 21:46:15.327" endtime="20210123 21:46:15.339"></status>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current page title equals ``title``.</doc>
+<arguments>
+<arg>${text}</arg>
+</arguments>
+<msg timestamp="20210123 21:46:15.347" level="INFO">Page title is 'Register - Demo App'.</msg>
+<status status="PASS" starttime="20210123 21:46:15.339" endtime="20210123 21:46:15.348"></status>
+</kw>
+<kw name="Go To Log In - Demo App" library="common">
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${LOGIN URL}</arg>
+</arguments>
+<msg timestamp="20210123 21:46:15.352" level="INFO">Opening url 'http://localhost:8080/login'</msg>
+<status status="PASS" starttime="20210123 21:46:15.350" endtime="20210123 21:46:15.418"></status>
+</kw>
+<kw name="Log In - Demo App" library="common">
+<arguments>
+<arg>${LOGIN URL}</arg>
+</arguments>
+<kw name="Location Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+</arguments>
+<msg timestamp="20210123 21:46:15.427" level="INFO">Current location is 'http://localhost:8080/login'.</msg>
+<status status="PASS" starttime="20210123 21:46:15.419" endtime="20210123 21:46:15.427"></status>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current page title equals ``title``.</doc>
+<arguments>
+<arg>Log In - Demo App</arg>
+</arguments>
+<msg timestamp="20210123 21:46:15.436" level="INFO">Page title is 'Log In - Demo App'.</msg>
+<status status="PASS" starttime="20210123 21:46:15.428" endtime="20210123 21:46:15.437"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:46:15.419" endtime="20210123 21:46:15.437"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:46:15.348" endtime="20210123 21:46:15.437"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:46:15.327" endtime="20210123 21:46:15.437"></status>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary" type="teardown">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20210123 21:46:15.438" endtime="20210123 21:46:19.815"></status>
+</kw>
+<timeout value="10 minutes"></timeout>
+<status status="PASS" starttime="20210123 21:46:00.477" endtime="20210123 21:46:19.816" critical="yes"></status>
+</test>
+<kw name="Register Suite Teardown" type="teardown">
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20210123 21:46:19.828" endtime="20210123 21:46:19.830"></status>
+</kw>
+<status status="PASS" starttime="20210123 21:46:19.826" endtime="20210123 21:46:19.830"></status>
+</kw>
+<doc>Register test-cases to register different user to system</doc>
+<status status="PASS" starttime="20210123 21:45:50.597" endtime="20210123 21:46:19.831"></status>
+</suite>
+<status status="PASS" starttime="20210123 21:44:25.755" endtime="20210123 21:46:19.857"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="9" fail="0">Critical Tests</stat>
+<stat pass="9" fail="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="4" fail="0">login</stat>
+<stat pass="4" fail="0">smoke-test</stat>
+</tag>
+<suite>
+<stat pass="9" fail="0" id="s1" name="Testsuite">Testsuite</stat>
+<stat pass="3" fail="0" id="s1-s1" name="Auth Tests">Testsuite.Auth Tests</stat>
+<stat pass="4" fail="0" id="s1-s2" name="Login Tests">Testsuite.Login Tests</stat>
+<stat pass="2" fail="0" id="s1-s3" name="Register Tests">Testsuite.Register Tests</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20210123 21:44:32.058" level="WARN">Error in file 'C:\Users\jalan\PycharmProjects\remoterobotframework\demo_app\testsuite\common.robot' in FOR loop starting on line 70: For loop header ':FOR' is deprecated. Use 'FOR' instead.</msg>
+<msg timestamp="20210123 21:44:32.063" level="WARN">Error in file 'C:\Users\jalan\PycharmProjects\remoterobotframework\demo_app\testsuite\common.robot' in FOR loop starting on line 70: Marking for loop body with '\' is deprecated. Remove markers and use 'END' instead.</msg>
+<msg timestamp="20210123 21:44:33.517" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
+<msg timestamp="20210123 21:44:35.588" level="WARN">Accessing variable items using '&amp;{data}[status]' syntax is deprecated. Use '${data}[status]' instead.</msg>
+<msg timestamp="20210123 21:44:43.867" level="WARN">Error in file 'C:\Users\jalan\PycharmProjects\remoterobotframework\demo_app\testsuite\common.robot' in FOR loop starting on line 70: For loop header ':FOR' is deprecated. Use 'FOR' instead.</msg>
+<msg timestamp="20210123 21:44:43.872" level="WARN">Error in file 'C:\Users\jalan\PycharmProjects\remoterobotframework\demo_app\testsuite\common.robot' in FOR loop starting on line 70: Marking for loop body with '\' is deprecated. Remove markers and use 'END' instead.</msg>
+<msg timestamp="20210123 21:44:45.336" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
+<msg timestamp="20210123 21:44:47.411" level="WARN">Accessing variable items using '&amp;{data}[status]' syntax is deprecated. Use '${data}[status]' instead.</msg>
+<msg timestamp="20210123 21:44:47.415" level="WARN">Keyword 'RequestsLibrary.Put Request' is deprecated. Please use `PUT On Session` instead.</msg>
+<msg timestamp="20210123 21:44:57.618" level="WARN">Error in file 'C:\Users\jalan\PycharmProjects\remoterobotframework\demo_app\testsuite\common.robot' in FOR loop starting on line 70: For loop header ':FOR' is deprecated. Use 'FOR' instead.</msg>
+<msg timestamp="20210123 21:44:57.625" level="WARN">Error in file 'C:\Users\jalan\PycharmProjects\remoterobotframework\demo_app\testsuite\common.robot' in FOR loop starting on line 70: Marking for loop body with '\' is deprecated. Remove markers and use 'END' instead.</msg>
+<msg timestamp="20210123 21:44:59.188" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
+<msg timestamp="20210123 21:45:09.298" level="WARN">Error in file 'C:\Users\jalan\PycharmProjects\remoterobotframework\demo_app\testsuite\common.robot' in FOR loop starting on line 70: For loop header ':FOR' is deprecated. Use 'FOR' instead.</msg>
+<msg timestamp="20210123 21:45:09.299" level="WARN">Error in file 'C:\Users\jalan\PycharmProjects\remoterobotframework\demo_app\testsuite\common.robot' in FOR loop starting on line 70: Marking for loop body with '\' is deprecated. Remove markers and use 'END' instead.</msg>
+<msg timestamp="20210123 21:45:56.451" level="WARN">Error in file 'C:\Users\jalan\PycharmProjects\remoterobotframework\demo_app\testsuite\common.robot' in FOR loop starting on line 70: For loop header ':FOR' is deprecated. Use 'FOR' instead.</msg>
+<msg timestamp="20210123 21:45:56.453" level="WARN">Error in file 'C:\Users\jalan\PycharmProjects\remoterobotframework\demo_app\testsuite\common.robot' in FOR loop starting on line 70: Marking for loop body with '\' is deprecated. Remove markers and use 'END' instead.</msg>
+<msg timestamp="20210123 21:46:06.336" level="WARN">Error in file 'C:\Users\jalan\PycharmProjects\remoterobotframework\demo_app\testsuite\common.robot' in FOR loop starting on line 70: For loop header ':FOR' is deprecated. Use 'FOR' instead.</msg>
+<msg timestamp="20210123 21:46:06.340" level="WARN">Error in file 'C:\Users\jalan\PycharmProjects\remoterobotframework\demo_app\testsuite\common.robot' in FOR loop starting on line 70: Marking for loop body with '\' is deprecated. Remove markers and use 'END' instead.</msg>
+<msg timestamp="20210123 21:46:13.826" level="WARN">Error in file 'C:\Users\jalan\PycharmProjects\remoterobotframework\demo_app\testsuite\common.robot' in FOR loop starting on line 70: For loop header ':FOR' is deprecated. Use 'FOR' instead.</msg>
+<msg timestamp="20210123 21:46:13.828" level="WARN">Error in file 'C:\Users\jalan\PycharmProjects\remoterobotframework\demo_app\testsuite\common.robot' in FOR loop starting on line 70: Marking for loop body with '\' is deprecated. Remove markers and use 'END' instead.</msg>
+</errors>
+</robot>
